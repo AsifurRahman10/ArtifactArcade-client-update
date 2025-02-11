@@ -2,17 +2,22 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "motion/react";
-
-import banner1 from "../assets/banner1.jpg";
-import banner2 from "../assets/banner2.jpg";
-import banner3 from "../assets/banner3.jpg";
-import banner4 from "../assets/banner4.jpg";
-import banner5 from "../assets/banner5.jpg";
-import banner6 from "../assets/banner6.jpg";
+import banner1 from "../../assets/banner1.jpg";
+import banner2 from "../../assets/banner2.jpg";
+import banner3 from "../../assets/banner3.jpg";
+import banner4 from "../../assets/banner4.jpg";
+import banner5 from "../../assets/banner5.jpg";
+import banner6 from "../../assets/banner6.jpg";
+import { CustomNextArrow, CustomPrevArrow } from "./Custom-Arrows";
+import BorderBtn from "./BannerButton/Borderbtn";
 
 export const Banner = () => {
   const settings = {
     dots: true,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
+    arrows: true,
+    fade: true,
     lazyLoad: true,
     infinite: true,
     autoplay: true,
@@ -22,6 +27,7 @@ export const Banner = () => {
     slidesToScroll: 1,
     initialSlide: 2,
     cssEase: "ease-in-out",
+    waitForAnimate: false,
   };
 
   const bannerImg = [
@@ -70,12 +76,12 @@ export const Banner = () => {
   ];
 
   return (
-    <div className="relative mt-[112px]">
+    <div className="relative mt-[112px] z-30">
       <Slider {...settings} className="relative overflow-hidden">
         {bannerImg.map((banner, idx) => (
           <div
             key={idx}
-            className="relative h-[400px] md:h-[600px] lg:h-[800px] overflow-hidden"
+            className="relative h-[calc(100vh-112px)] overflow-hidden"
           >
             {/* Background Image */}
             <motion.img
@@ -120,7 +126,7 @@ export const Banner = () => {
                   {banner.description}
                 </motion.p>
                 <motion.p
-                  className="mt-2 text-lg md:text-2xl"
+                  className="mt-2 text-lg md:text-2xl mb-6"
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{
@@ -131,18 +137,7 @@ export const Banner = () => {
                 >
                   {banner.text}
                 </motion.p>
-                <motion.button
-                  className="mt-6 bg-custom-btn text-white px-6 py-3 rounded-md border-none transition-all duration-300 transform hover:bg-white hover:text-black hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom-btn-dark text-base md:text-lg font-bold"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: 0.9,
-                    ease: "easeOut",
-                  }}
-                >
-                  Learn More
-                </motion.button>
+                <BorderBtn />
               </div>
             </div>
           </div>

@@ -1,0 +1,65 @@
+.custom-prev-arrow,
+.custom-next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-prev-arrow {
+  left: 70px;
+}
+
+.custom-next-arrow {
+  right: 70px;
+}
+
+.custom-prev-arrow:hover,
+.custom-next-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  transform: translateY(-50%) scale(1.2);
+}
+
+@media (max-width: 1024px) {
+  .custom-prev-arrow,
+  .custom-next-arrow {
+    top: auto;
+    bottom: 6px;
+  }
+
+  .custom-prev-arrow {
+    left: 40%;
+  }
+
+  .custom-next-arrow {
+    right: 40%;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-prev-arrow,
+  .custom-next-arrow {
+    top: auto;
+    bottom: 6px; /* Move to bottom */
+  }
+
+  .custom-prev-arrow {
+    left: 35%;
+  }
+
+  .custom-next-arrow {
+    right: 35%;
+  }
+}
