@@ -8,14 +8,22 @@ import { motion } from "motion/react";
 export const AllArtifacts = () => {
   const [allArtifactsData, setAllArtifactsData] = useState([]);
   const [search, setSearch] = useState("");
+  const [selectedType, setSelectedType] = useState("");
+
+  const handleSelectedType = (e) => {
+    setSelectedType(e.target.value);
+    console.log(e.target.value);
+  };
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/allArtifacts?search=${search}`)
+      .get(
+        `http://localhost:4000/allArtifacts?search=${search}&sort=${selectedType}`
+      )
       .then((res) => {
         setAllArtifactsData(res.data);
       });
-  }, [search]);
+  }, [search, selectedType]);
   return (
     <div className="mt-[112px]">
       <HelmetProvider>
@@ -30,7 +38,7 @@ export const AllArtifacts = () => {
         }
       ></Title>
       <div className="w-11/12 lg:w-9/12 flex justify-end items-center my-10 mx-auto">
-        <form className="w-7/12 md:w-1/3 ml-auto">
+        <form className="w-full md:w-[307px] ml-auto">
           <label
             htmlFor="default-search"
             className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white "
@@ -67,59 +75,19 @@ export const AllArtifacts = () => {
         </form>
 
         <div>
-          <div className="flex items-center justify-center p-4">
-            <button
-              id="dropdownDefault"
-              data-dropdown-toggle="dropdown"
-              className="text-black border focus:ring-4 focus:outline-none focus:ring-[#183153] font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              type="button"
+          <div className="flex lg:items-center flex-col md:flex-row justify-between gap-4 ml-4">
+            {/* Dropdown Filter */}
+            <select
+              onChange={handleSelectedType}
+              value={selectedType}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-custom-btn focus:border-custom-btn block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-custom-btn dark:focus:border-custom-btn"
             >
-              Filter
-              <svg
-                className="w-4 h-4 ml-2"
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-
-            <div
-              id="dropdown"
-              className="z-10 hidden w-56 p-3 bg-white rounded-lg shadow dark:bg-gray-700"
-            >
-              <h6 className="mb-3 text-sm font-medium text-gray-900 dark:text-white">
-                Category
-              </h6>
-              <ul
-                className="space-y-2 text-sm"
-                aria-labelledby="dropdownDefault"
-              >
-                <li className="flex items-center">
-                  <input
-                    id="apple"
-                    type="checkbox"
-                    value=""
-                    className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                  />
-
-                  <label
-                    for="apple"
-                    className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                  >
-                    Apple (56)
-                  </label>
-                </li>
-              </ul>
-            </div>
+              <option disabled value="">
+                Filter
+              </option>
+              <option value="name-asc">Name: A-Z</option>
+              <option value="name-desc">Name: Z-A</option>
+            </select>
           </div>
         </div>
       </div>
