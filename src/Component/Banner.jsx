@@ -70,7 +70,7 @@ export const Banner = () => {
   ];
 
   return (
-    <div className="relative">
+    <div className="relative mt-[112px]">
       <Slider {...settings} className="relative overflow-hidden">
         {bannerImg.map((banner, idx) => (
           <div
