@@ -56,7 +56,7 @@ export const AddArtifacts = () => {
       });
   };
   return (
-    <div>
+    <div className=" mt-[112px]">
       <HelmetProvider>
         <Helmet>
           <title>Add Artifacts - ArtifactArcade</title>
@@ -71,7 +71,7 @@ export const AddArtifacts = () => {
 
       {/* form design */}
 
-      <div className="w-11/12 lg:w-9/12 mx-auto my-10 md:my-20">
+      <div className="w-11/12 lg:w-9/12 mx-auto my-10 md:my-20 ">
         <form onSubmit={handleAddArtifactsSubmit}>
           {/* Artifact Name */}
           <div className="flex lg:items-center flex-col md:flex-row">
@@ -211,9 +211,12 @@ export const AddArtifacts = () => {
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-custom-btn focus:border-custom-btn block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-custom-btn dark:focus:border-custom-btn flex-1"
             />
           </div>
-          <button className="btn w-8/12 py-2 mx-auto block mt-14 bg-custom-btn text-white rounded-full">
-            Add Artifact
-          </button>
+          <div className="flex mt-10 items-center translate-x-16 md:translate-x-0 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button className=" bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-10 w-8/12 mx-auto">
+              <span className="relative z-10">Add Artifact</span>
+              <span className="absolute inset-0 w-0 bg-[#183153] transition-all rounded duration-500 ease-in-out group-hover:w-8/12 mx-auto"></span>
+            </button>
+          </div>
         </form>
       </div>
     </div>

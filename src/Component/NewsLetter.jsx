@@ -17,14 +17,14 @@ export default function NewsLetter() {
     });
   };
   return (
-    <div className="w-11/12 lg:w-9/12 mx-auto flex justify-between items-center py-[100px] gap-6">
+    <div className="w-11/12 lg:w-9/12 mx-auto flex flex-col md:flex-row justify-between items-center py-20 md:py-[100px] gap-6">
       <div className="">
-        <h2 className="text-3xl font-semibold">Stay connected to history!</h2>
-        <p className="text-gray-800">
+        <h2 className="text-3xl font-semibold">Stay connected to history !</h2>
+        <p className="text-gray-800 mt-2">
           Subscribe for regular updates on new artifacts and discoveries.
         </p>
       </div>
-      <div className="w-1/2">
+      <div className="w-full md:w-1/2">
         <form
           onSubmit={handleSubmit}
           className="flex rounded-[30px] overflow-hidden border"
@@ -39,7 +39,7 @@ export default function NewsLetter() {
           />
           <button
             to="/login"
-            className="bg-custom-btn font-semibold text-white py-3 rounded-r-[30px] group overflow-hidden px-10 relative"
+            className="bg-custom-btn font-semibold text-white py-3 rounded-r-[30px] group overflow-hidden px-6 md:px-10 relative"
           >
             <span className="relative z-10">Subscribe</span>
             <span className="absolute inset-0 w-0 bg-[#183153] transition-all duration-500 ease-in-out group-hover:w-full"></span>

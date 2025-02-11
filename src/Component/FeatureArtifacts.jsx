@@ -16,11 +16,11 @@ export const FeatureArtifacts = () => {
         <p className="text-custom-btn font-semibold tracking-[0.15em] text-lg mb-6">
           What's going on
         </p>
-        <h2 className="text-5xl font-extrabold title-text">
+        <h2 className="text-4xl md:text-5xl font-extrabold title-text">
           Featured Artifacts
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mt-20 md:mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mt-10 md:mt-20">
         {data.map((item) => (
           <FeatureCard key={item._id} item={item}></FeatureCard>
         ))}

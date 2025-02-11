@@ -7,17 +7,17 @@ import banner6 from "../assets/banner6.jpg";
 
 export const PhotoGallery = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-10 md:pt-20">
       <div className="text-center">
         <p className="text-custom-btn font-semibold tracking-[0.15em] text-lg mb-6 uppercase">
           Gallery
         </p>
-        <h2 className="text-5xl font-extrabold title-text">
+        <h2 className="text-3xl md:text-5xl font-extrabold title-text">
           Explore Our Collection
         </h2>
       </div>
       <div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 md:mt-20">
           <div className="h-[400px] w-full overflow-hidden">
             <img
               className="h-full w-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"

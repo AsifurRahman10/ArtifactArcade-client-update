@@ -3,6 +3,7 @@ import "flowbite";
 import logo from "../../public/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { LuSunMedium, LuSunMoon } from "react-icons/lu";
 
 export const Navbar = () => {
   const { user, handleSignOut } = useContext(AuthContext);
@@ -101,10 +102,28 @@ export const Navbar = () => {
               )}
             </div>
           ) : (
-            <div className="flex items-center translate-x-16 md:translate-x-0 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <div className="flex items-center translate-x-10 md:translate-x-0 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse md:gap-6">
+              <label class="hidden md:inline-flex items-center cursor-pointer space-x-2">
+                <span class="text-gray-600 dark:text-gray-400 transition-colors">
+                  <LuSunMedium />
+                </span>
+                <input type="checkbox" value="" class="sr-only peer" />
+                <div
+                  class="relative w-12 h-7 bg-gray-300 rounded-full peer dark:bg-gray-700 
+          peer-checked:bg-[#97643F] transition-colors duration-300
+          peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-5 
+          peer-checked:after:border-white after:content-[''] after:absolute after:top-1 
+          after:left-1 after:bg-white after:border-gray-300 after:border 
+          after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-500"
+                ></div>
+                <span class="text-gray-900 dark:text-gray-100 transition-colors">
+                  <LuSunMoon />
+                </span>
+              </label>
+
               <Link
                 to="/login"
-                className=" bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-10"
+                className=" bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-8 md:px-10"
               >
                 <span className="relative z-10">Login</span>
                 <span className="absolute inset-0 w-0 bg-[#183153] transition-all rounded duration-500 ease-in-out group-hover:w-full"></span>
@@ -145,6 +164,23 @@ export const Navbar = () => {
           >
             <ul className="flex flex-col font-bold p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               {li}
+              <label class="inline-flex items-center cursor-pointer space-x-2">
+                <span class="text-gray-600 dark:text-gray-400 transition-colors">
+                  <LuSunMedium />
+                </span>
+                <input type="checkbox" value="" class="sr-only peer" />
+                <div
+                  class="relative w-12 h-7 bg-gray-300 rounded-full peer dark:bg-gray-700 
+          peer-checked:bg-[#97643F] transition-colors duration-300
+          peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-5 
+          peer-checked:after:border-white after:content-[''] after:absolute after:top-1 
+          after:left-1 after:bg-white after:border-gray-300 after:border 
+          after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-500"
+                ></div>
+                <span class="text-gray-900 dark:text-gray-100 transition-colors">
+                  <LuSunMoon />
+                </span>
+              </label>
             </ul>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export const AboutUs = () => {
   return (
-    <div className="py-20 bg-gradient-to-r from-[#F4E3D2] to-[#ECD5C7] relative">
+    <div className="py-10 md:py-20 bg-gradient-to-r from-[#F4E3D2] to-[#ECD5C7] relative">
       <div className="flex flex-col lg:flex-row items-center w-11/12 lg:w-9/12 mx-auto gap-12">
         {/* Image Section */}
         <div className="flex-1 relative">
