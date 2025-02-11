@@ -52,7 +52,7 @@
   .custom-prev-arrow,
   .custom-next-arrow {
     top: auto;
-    bottom: 6px; /* Move to bottom */
+    bottom: 0px; /* Move to bottom */
   }
 
   .custom-prev-arrow {

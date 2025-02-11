@@ -36,7 +36,7 @@ export const Banner = () => {
       text: "Explore History Through Artifacts",
       title: "Discover the World’s Hidden Stories",
       description:
-        "Dive into a rich collection of historical artifacts that tell the stories of past civilizations and their groundbreaking achievements. Engage with history like never before.",
+        "Dive into a rich collection of historical artifacts that tell the stories of past civilizations . Engage with history like never before.",
     },
     {
       image: banner2,
@@ -50,7 +50,7 @@ export const Banner = () => {
       text: "A Portal to the Past",
       title: "Experience the Wonders of History",
       description:
-        "Interact with a vast collection of historical items and learn about their cultural, scientific, and societal importance. Get inspired by the achievements of past civilizations.",
+        "Interact with a vast collection of historical items and learn about their cultural, and societal importance. Get inspired by the achievements of past civilizations.",
     },
     {
       image: banner4,
@@ -64,7 +64,7 @@ export const Banner = () => {
       text: "Engage and Explore",
       title: "Interact with Artifacts and People",
       description:
-        "Engage with the community by liking, commenting, and discussing artifacts. Share your thoughts and learn from others who are passionate about history and its preservation.",
+        "Engage with the community by liking artifacts. Share your thoughts and learn from others who are passionate about history and its preservation.",
     },
     {
       image: banner6,
@@ -102,31 +102,8 @@ export const Banner = () => {
             {/* Content */}
             <div className="absolute inset-0 flex items-center justify-center text-white text-center px-4">
               <div className="lg:w-8/12 mx-auto">
-                <motion.h1
-                  className="text-3xl md:text-5xl lg:text-7xl font-bold"
-                  initial={{ y: -50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    duration: 1,
-                    ease: "easeOut",
-                  }}
-                >
-                  {banner.title}
-                </motion.h1>
                 <motion.p
-                  className="mt-4 text-sm md:text-lg lg:text-xl"
-                  initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    duration: 1,
-                    delay: 0.3,
-                    ease: "easeOut",
-                  }}
-                >
-                  {banner.description}
-                </motion.p>
-                <motion.p
-                  className="mt-2 text-lg md:text-2xl mb-6"
+                  className="my-1 md:my-2 font-bold text-lg text-gray-200"
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{
@@ -137,6 +114,30 @@ export const Banner = () => {
                 >
                   {banner.text}
                 </motion.p>
+                <motion.h1
+                  className="text-2xl md:text-4xl lg:text-6xl font-bold"
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 1,
+                    ease: "easeOut",
+                  }}
+                >
+                  {banner.title}
+                </motion.h1>
+                <motion.p
+                  className="mt-1 md:mt-2 w-11/12 md:w-9/12 mb-2 md:mb-6 mx-auto text-lg text-gray-200"
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 1,
+                    delay: 0.3,
+                    ease: "easeOut",
+                  }}
+                >
+                  {banner.description}
+                </motion.p>
+
                 <BorderBtn />
               </div>
             </div>

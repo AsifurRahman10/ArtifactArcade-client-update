@@ -102,13 +102,12 @@ export const Navbar = () => {
             </div>
           ) : (
             <div className="flex items-center translate-x-16 md:translate-x-0 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-              <Link to="/login">
-                <button className="relative flex justify-center items-center bg-custom-btn  rounded-[5px] shadow-lg overflow-hidden cursor-pointer border-none group">
-                  <span className="text-white text-lg font-bold py-2 px-8 transition-all group-hover:text-[#fffff] group-hover:scale-105 z-10">
-                    Login
-                  </span>
-                  <span className="absolute w-0 h-full bg-[#183153] transition-all group-hover:w-full group-hover:left-0 group-hover:right-auto"></span>
-                </button>
+              <Link
+                to="/login"
+                className=" bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-10"
+              >
+                <span className="relative z-10">Login</span>
+                <span className="absolute inset-0 w-0 bg-[#183153] transition-all rounded duration-500 ease-in-out group-hover:w-full"></span>
               </Link>
             </div>
           )}

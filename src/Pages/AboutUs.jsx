@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import img1 from "../assets/aboutus.jpg";
 import dummy from "../assets/dummy.png";
 import { motion } from "motion/react";
@@ -28,9 +29,11 @@ export const AboutUs = () => {
             stories etched in artifacts, revealing the marvels of ancient
             civilizations. Let your curiosity unlock the door to the past.
           </p>
-          <button className="mt-4 px-8 py-3 text-white font-semibold bg-gradient-to-r from-[#6B4E35] to-[#4A3423] rounded-lg shadow-lg hover:shadow-2xl hover:scale-110 hover:bg-[#4A3423] transition-all duration-300">
-            Learn More
-          </button>
+          <Link to={"/allArtifacts"}>
+            <button className="mt-4 px-8 py-3 text-white font-semibold bg-gradient-to-r from-[#6B4E35] to-[#4A3423] rounded-lg shadow-lg hover:shadow-2xl hover:scale-110 hover:bg-[#4A3423] transition-all duration-300">
+              Learn More
+            </button>
+          </Link>
         </div>
       </div>
       <motion.div

@@ -22,9 +22,10 @@ export const FeatureCard = ({ item }) => {
         </p>
         <Link
           to={`/artifactsDetails/${_id}`}
-          className="mt-4 absolute -bottom-5 bg-custom-btn font-semibold text-white px-4 py-2 rounded hover:bg-blue-700 transition-all duration-500 ease-in-out group-hover:translate-y-2"
+          className="mt-4 absolute -bottom-5 bg-custom-btn font-semibold text-white px-4 py-2 rounded group overflow-hidden"
         >
-          View Details
+          <span className="relative z-10">View Details</span>
+          <span className="absolute inset-0 w-0 bg-[#183153] rounded transition-all duration-500 ease-in-out group-hover:w-full"></span>
         </Link>
       </div>
     </div>

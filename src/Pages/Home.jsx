@@ -4,6 +4,7 @@ import { FeatureArtifacts } from "../Component/FeatureArtifacts";
 import { AboutUs } from "./AboutUs";
 import { PhotoGallery } from "../Component/PhotoGallery";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import NewsLetter from "../Component/NewsLetter";
 
 export const Home = () => {
   return (
@@ -24,6 +25,9 @@ export const Home = () => {
       </section>
       <section>
         <PhotoGallery></PhotoGallery>
+      </section>
+      <section>
+        <NewsLetter />
       </section>
     </div>
   );
