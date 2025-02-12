@@ -62,7 +62,9 @@ export const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4000/artifactsDetails/${params.id}`),
+          fetch(
+            `https://artifact-arcade-server.vercel.app/artifactsDetails/${params.id}`
+          ),
       },
       {
         path: "/artifactsDetails/:id",
@@ -72,7 +74,9 @@ export const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4000/artifactsDetails/${params.id}`),
+          fetch(
+            `https://artifact-arcade-server.vercel.app/artifactsDetails/${params.id}`
+          ),
       },
       {
         path: "/login",

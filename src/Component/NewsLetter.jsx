@@ -6,15 +6,17 @@ export default function NewsLetter() {
     e.preventDefault();
     const email = e.target.email.value;
 
-    axios.post("http://localhost:4000/newsletter", email).then((res) => {
-      if (res.data.insertedId) {
-        Swal.fire({
-          title: "Thank you for subscribing!",
-          text: "You will now receive updates on historical artifacts and more.",
-          icon: "success",
-        });
-      }
-    });
+    axios
+      .post("https://artifact-arcade-server.vercel.app/newsletter", email)
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            title: "Thank you for subscribing!",
+            text: "You will now receive updates on historical artifacts and more.",
+            icon: "success",
+          });
+        }
+      });
   };
   return (
     <div className="w-11/12 lg:w-9/12 mx-auto flex flex-col md:flex-row justify-between items-center py-20 md:py-[100px] gap-6 ">

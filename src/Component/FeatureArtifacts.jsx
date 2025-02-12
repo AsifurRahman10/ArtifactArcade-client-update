@@ -8,10 +8,12 @@ export const FeatureArtifacts = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    axios.get("http://localhost:4000/highestLike").then((res) => {
-      setData(res.data);
-      setLoading(false);
-    });
+    axios
+      .get("https://artifact-arcade-server.vercel.app/highestLike")
+      .then((res) => {
+        setData(res.data);
+        setLoading(false);
+      });
   }, []);
   return (
     <div className="py-10 md:py-20 w-11/12 lg:w-9/12 mx-auto">
@@ -32,7 +34,7 @@ export const FeatureArtifacts = () => {
       </div>
       <Link
         to="/allArtifacts"
-        className="bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-8 md:px-6 lg:px-10 relative flex justify-center items-center w-1/3 mx-auto mt-8"
+        className="bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-8 md:px-6 lg:px-10 relative flex justify-center items-center w-full lg:w-1/3 mx-auto mt-8"
       >
         <span className="relative z-10">View all artifacts</span>
         <span className="absolute inset-0 w-0 bg-[#183153] transition-all rounded duration-500 ease-in-out group-hover:w-full"></span>

@@ -3,7 +3,6 @@ import { Card } from "../Component/Card";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { motion } from "motion/react";
 
 export const AllArtifacts = () => {
   const [allArtifactsData, setAllArtifactsData] = useState([]);
@@ -12,13 +11,12 @@ export const AllArtifacts = () => {
 
   const handleSelectedType = (e) => {
     setSelectedType(e.target.value);
-    console.log(e.target.value);
   };
 
   useEffect(() => {
     axios
       .get(
-        `http://localhost:4000/allArtifacts?search=${search}&sort=${selectedType}`
+        `https://artifact-arcade-server.vercel.app/allArtifacts?search=${search}&sort=${selectedType}`
       )
       .then((res) => {
         setAllArtifactsData(res.data);

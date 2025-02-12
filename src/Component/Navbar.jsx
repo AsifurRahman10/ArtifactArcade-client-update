@@ -9,7 +9,7 @@ import { ThemeContext } from "../Provider/ThemeProvider";
 export const Navbar = () => {
   const { user, handleSignOut } = useContext(AuthContext);
 
-  const { toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const dropdownRef = useRef(null);
   const navbarRef = useRef(null);
@@ -161,7 +161,6 @@ export const Navbar = () => {
                 </span>
                 <input
                   type="checkbox"
-                  // checked={darkMode}
                   onChange={toggleTheme}
                   className="sr-only peer"
                 />
@@ -231,7 +230,11 @@ export const Navbar = () => {
                 <span className="text-gray-600 dark:text-gray-400 transition-colors">
                   <LuSunMedium />
                 </span>
-                <input type="checkbox" value="" className="sr-only peer" />
+                <input
+                  type="checkbox"
+                  onChange={toggleTheme}
+                  className="sr-only peer"
+                />
                 <div
                   className="relative w-12 h-7 bg-gray-300 rounded-full peer dark:bg-gray-700 
           peer-checked:bg-[#97643F] transition-colors duration-300

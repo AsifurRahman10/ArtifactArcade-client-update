@@ -30,9 +30,12 @@ export const ArtifactDetails = () => {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`http://localhost:4000/likedArtifacts?email=${user.email}`, {
-          withCredentials: true,
-        })
+        .get(
+          `https://artifact-arcade-server.vercel.app/likedArtifacts?email=${user.email}`,
+          {
+            withCredentials: true,
+          }
+        )
         .then((res) => {
           const alreadyLiked = res.data.likedArtifacts?.find(
             (item) => item.id === _id
@@ -52,12 +55,15 @@ export const ArtifactDetails = () => {
       const updatedLike = { like: newLiked };
 
       axios
-        .patch(`http://localhost:4000/updateLike/${_id}`, updatedLike)
+        .patch(
+          `https://artifact-arcade-server.vercel.app/updateLike/${_id}`,
+          updatedLike
+        )
         .then((res) => {
           if (res.data.modifiedCount > 0) {
             axios
               .put(
-                `http://localhost:4000/likedArtifacts/${user.email}`,
+                `https://artifact-arcade-server.vercel.app/likedArtifacts/${user.email}`,
                 { id: _id, image: artifactImage },
                 { withCredentials: true }
               )
@@ -82,12 +88,15 @@ export const ArtifactDetails = () => {
       const updatedLike = { like: newLiked };
 
       axios
-        .patch(`http://localhost:4000/updateLike/${_id}`, updatedLike)
+        .patch(
+          `https://artifact-arcade-server.vercel.app/updateLike/${_id}`,
+          updatedLike
+        )
         .then((res) => {
           if (res.data.modifiedCount > 0) {
             axios
               .delete(
-                `http://localhost:4000/likedArtifacts/${user.email}/${_id}`,
+                `https://artifact-arcade-server.vercel.app/likedArtifacts/${user.email}/${_id}`,
                 { withCredentials: true }
               )
               .then(() => {

@@ -11,23 +11,16 @@ export const MyArtifacts = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/myArtifacts?email=${user.email}`, {
-        withCredentials: true,
-      })
+      .get(
+        `https://artifact-arcade-server.vercel.app/myArtifacts?email=${user.email}`,
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         setMyArtifacts(res.data);
       });
   }, []);
-
-  if (!myArtifacts || myArtifacts.length === 0) {
-    return (
-      <div className="w-11/12 lg:w-9/12 mx-auto md:min-h-[calc(100vh-20rem)]">
-        <h2 className="mt-10 text-2xl font-semibold text-center text-gray-700 dark:text-white">
-          You haven’t added any artifacts yet
-        </h2>
-      </div>
-    );
-  }
 
   return (
     <div className="mt-[112px]">
@@ -41,13 +34,19 @@ export const MyArtifacts = () => {
         para={"Discover all the artifacts you’ve contributed."}
       ></Title>
       <div className="w-11/12 lg:w-9/12 mx-auto my-10 grid grid-cols-1 gap-6">
-        {myArtifacts.map((item) => (
-          <MyArtifactsCard
-            key={item._id}
-            item={item}
-            setMyArtifacts={setMyArtifacts}
-          ></MyArtifactsCard>
-        ))}
+        {myArtifacts > 0 ? (
+          myArtifacts.map((item) => (
+            <MyArtifactsCard
+              key={item._id}
+              item={item}
+              setMyArtifacts={setMyArtifacts}
+            ></MyArtifactsCard>
+          ))
+        ) : (
+          <h2 className="mt-10 text-2xl font-semibold text-center text-black dark:text-white">
+            You haven’t added any artifacts yet
+          </h2>
+        )}
       </div>
     </div>
   );

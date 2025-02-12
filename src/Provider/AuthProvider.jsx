@@ -57,7 +57,7 @@ const AuthProvider = ({ children }) => {
 
         axios
           .post(
-            "http://localhost:4000/jwt",
+            "https://artifact-arcade-server.vercel.app/jwt",
             { email: currentUser.email },
             { withCredentials: true }
           )
@@ -66,7 +66,7 @@ const AuthProvider = ({ children }) => {
           });
       } else {
         axios
-          .post("http://localhost:4000/logout", null, {
+          .post("https://artifact-arcade-server.vercel.app/logout", null, {
             withCredentials: true,
           })
           .then(() => {

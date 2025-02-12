@@ -31,7 +31,7 @@ export const AboutUs = () => {
           </p>
           <Link
             to="/allArtifacts"
-            className="bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-8 md:px-6 lg:px-10 relative flex justify-center items-center w-1/3"
+            className="bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-8 md:px-6 lg:px-10 relative flex justify-center items-center w-full lg:w-1/3"
           >
             <span className="relative z-10">Learn More</span>
             <span className="absolute inset-0 w-0 bg-[#183153] transition-all rounded duration-500 ease-in-out group-hover:w-full"></span>
