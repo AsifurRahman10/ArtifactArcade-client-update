@@ -29,7 +29,7 @@ export const LikedArtifacts = () => {
     );
   }
   return (
-    <div>
+    <div className="mt-[112px]">
       <HelmetProvider>
         <Helmet>
           <title>Liked Artifacts - ArtifactArcade</title>

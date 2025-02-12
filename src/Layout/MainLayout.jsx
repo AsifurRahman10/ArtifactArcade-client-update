@@ -6,7 +6,7 @@ import ScrollToTop from "../Component/ScrollOnTop";
 
 export const MainLayout = () => {
   return (
-    <div className="bg-[#FFFFFF]">
+    <div className="bg-[#FFFFFF] dark:bg-dark-bg dark:text-white">
       <ScrollToTop></ScrollToTop>
       <header>
         <Navbar></Navbar>

@@ -25,10 +25,12 @@ export const FeatureArtifacts = () => {
           <FeatureCard key={item._id} item={item}></FeatureCard>
         ))}
       </div>
-      <Link to={"/allArtifacts"}>
-        <button className="mt-10 md:mt-20 px-6 py-2 block border hover:bg-custom-btn hover:text-white rounded mx-auto transition-all duration-500 ease-in-out hover:scale-105">
-          View all Artifacts
-        </button>
+      <Link
+        to="/allArtifacts"
+        className="bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-8 md:px-6 lg:px-10 relative flex justify-center items-center w-1/3 mx-auto mt-8"
+      >
+        <span className="relative z-10">View all artifacts</span>
+        <span className="absolute inset-0 w-0 bg-[#183153] transition-all rounded duration-500 ease-in-out group-hover:w-full"></span>
       </Link>
     </div>
   );

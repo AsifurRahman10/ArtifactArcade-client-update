@@ -100,7 +100,7 @@ export const ArtifactDetails = () => {
   };
 
   return (
-    <div className="pb-0 md:pb-10">
+    <div className="pb-0 md:pb-10 mt-[112px]">
       <HelmetProvider>
         <Helmet>
           <title>{artifactName} - ArtifactArcade</title>
@@ -112,7 +112,7 @@ export const ArtifactDetails = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
           <h2 className="text-3xl font-bold text-custom-btn">{artifactName}</h2>
           <div>
-            <p className="text-gray-600 flex items-center gap-2">
+            <p className="text-gray-600 flex items-center gap-2 dark:text-gray-400">
               <span className="font-semibold text-lg">
                 Total Likes: {liked}
               </span>
@@ -145,19 +145,19 @@ export const ArtifactDetails = () => {
           />
         </div>
         {/* Description */}
-        <p className="text-gray-700 text-base leading-relaxed mt-8">
+        <p className="text-gray-700 text-base leading-relaxed mt-8 dark:text-gray-300">
           {historicalContext}
         </p>
         {/* Additional Information */}
         <div className="flex flex-col space-y-1 mt-4">
-          <h3 className="text-gray-800 font-semibold">
+          <h3 className="text-gray-800 font-semibold dark:text-gray-100">
             <span className="text-gray-500">Type of Artifact:</span>{" "}
             {artifactType}
           </h3>
-          <h3 className="text-gray-800 font-semibold mt-4">
+          <h3 className="text-gray-800 font-semibold mt-4 dark:text-gray-100">
             <span className="text-gray-500">Discovered By:</span> {discoveredBy}
           </h3>
-          <h3 className="text-gray-800 font-semibold mt-4">
+          <h3 className="text-gray-800 font-semibold mt-4 dark:text-gray-100">
             <span className="text-gray-500">Created At:</span> {createdAt}
           </h3>
         </div>
@@ -165,15 +165,19 @@ export const ArtifactDetails = () => {
         <div className="flex flex-col md:flex-row md:items-center md:space-x-10 mt-4">
           <h3 className="flex items-center text-gray-800 font-semibold">
             <MdLocationOff className="text-red-500 w-5 h-5" />
-            <span className="ml-2">
-              <span className="text-gray-500">Present Location:</span>{" "}
+            <span className="ml-2 dark:text-white">
+              <span className="text-gray-500 dark:text-gray-300">
+                Present Location:
+              </span>{" "}
               {presentLocation}
             </span>
           </h3>
           <h3 className="flex items-center text-gray-800 font-semibold">
             <FaSearchengin className="text-blue-500 w-5 h-5" />
-            <span className="ml-2">
-              <span className="text-gray-500">Discovered At:</span>{" "}
+            <span className="ml-2 dark:text-white">
+              <span className="text-gray-500 dark:text-gray-300">
+                Discovered At:
+              </span>{" "}
               {discoveredAt}
             </span>
           </h3>

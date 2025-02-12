@@ -4,9 +4,12 @@ import logo from "../../public/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { LuSunMedium, LuSunMoon } from "react-icons/lu";
+import { ThemeContext } from "../Provider/ThemeProvider";
 
 export const Navbar = () => {
   const { user, handleSignOut } = useContext(AuthContext);
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -39,8 +42,8 @@ export const Navbar = () => {
     </>
   );
   return (
-    <nav className="mx-auto fixed left-0 top-0 z-40 w-full bg-white">
-      <div className=" border-gray-200 dark:bg-gray-900 relative small-text w-11/12 lg:w-9/12 mx-auto">
+    <nav className="mx-auto fixed left-0 top-0 z-40 w-full bg-white dark:bg-dark-bg">
+      <div className=" border-gray-200 relative small-text w-11/12 lg:w-9/12 mx-auto">
         <div className="flex flex-wrap items-center justify-between p-4">
           {/* Logo */}
           <Link to={"/"}>
@@ -102,28 +105,35 @@ export const Navbar = () => {
               )}
             </div>
           ) : (
-            <div className="flex items-center translate-x-10 md:translate-x-0 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse md:gap-6">
-              <label class="hidden md:inline-flex items-center cursor-pointer space-x-2">
-                <span class="text-gray-600 dark:text-gray-400 transition-colors">
+            <div className="flex items-center translate-x-10 md:translate-x-0 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse md:gap-3 lg:gap-6">
+              {/* Dark Mode Toggle */}
+              <label className="hidden md:inline-flex items-center cursor-pointer space-x-2">
+                <span className="text-gray-600 dark:text-gray-400 transition-colors">
                   <LuSunMedium />
                 </span>
-                <input type="checkbox" value="" class="sr-only peer" />
+                <input
+                  type="checkbox"
+                  // checked={darkMode}
+                  onChange={toggleTheme}
+                  className="sr-only peer"
+                />
                 <div
-                  class="relative w-12 h-7 bg-gray-300 rounded-full peer dark:bg-gray-700 
-          peer-checked:bg-[#97643F] transition-colors duration-300
+                  className="relative w-12 h-7 bg-gray-300 rounded-full peer dark:bg-gray-700 
+          peer-checked:bg-[#97643F] transition-colors duration-300 
           peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-5 
           peer-checked:after:border-white after:content-[''] after:absolute after:top-1 
           after:left-1 after:bg-white after:border-gray-300 after:border 
           after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-500"
                 ></div>
-                <span class="text-gray-900 dark:text-gray-100 transition-colors">
+                <span className="text-gray-900 dark:text-gray-100 transition-colors">
                   <LuSunMoon />
                 </span>
               </label>
 
+              {/* Login Button */}
               <Link
                 to="/login"
-                className=" bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-8 md:px-10"
+                className="bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-8 md:px-6 lg:px-10 relative"
               >
                 <span className="relative z-10">Login</span>
                 <span className="absolute inset-0 w-0 bg-[#183153] transition-all rounded duration-500 ease-in-out group-hover:w-full"></span>
@@ -162,9 +172,9 @@ export const Navbar = () => {
             } items-center justify-between w-full md:flex md:w-auto md:order-1`}
             id="navbar-user"
           >
-            <ul className="flex flex-col font-bold p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex gap-2 md:gap-0 flex-col font-bold p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-dark-bg md:dark:bg-dark-bg dark:bg-dark-bg">
               {li}
-              <label class="inline-flex items-center cursor-pointer space-x-2">
+              <label class="inline-flex items-center cursor-pointer space-x-2 md:hidden">
                 <span class="text-gray-600 dark:text-gray-400 transition-colors">
                   <LuSunMedium />
                 </span>

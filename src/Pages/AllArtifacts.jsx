@@ -83,7 +83,7 @@ export const AllArtifacts = () => {
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-custom-btn focus:border-custom-btn block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-custom-btn dark:focus:border-custom-btn"
             >
               <option disabled value="">
-                Filter
+                Sort
               </option>
               <option value="name-asc">Name: A-Z</option>
               <option value="name-desc">Name: Z-A</option>

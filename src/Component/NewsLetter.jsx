@@ -17,17 +17,17 @@ export default function NewsLetter() {
     });
   };
   return (
-    <div className="w-11/12 lg:w-9/12 mx-auto flex flex-col md:flex-row justify-between items-center py-20 md:py-[100px] gap-6">
+    <div className="w-11/12 lg:w-9/12 mx-auto flex flex-col md:flex-row justify-between items-center py-20 md:py-[100px] gap-6 ">
       <div className="">
         <h2 className="text-3xl font-semibold">Stay connected to history !</h2>
-        <p className="text-gray-800 mt-2">
+        <p className="text-gray-800 mt-2 dark:text-white">
           Subscribe for regular updates on new artifacts and discoveries.
         </p>
       </div>
       <div className="w-full md:w-1/2">
         <form
           onSubmit={handleSubmit}
-          className="flex rounded-[30px] overflow-hidden border"
+          className="flex rounded-[30px] overflow-hidden border dark:border-none"
         >
           <input
             type="email"

@@ -66,7 +66,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row lg:flex-row items-center justify-center small-text md:w-11/12 mx-auto py-10  max-w-screen-2xl">
+    <div className="flex flex-col md:flex-row lg:flex-row items-center justify-center small-text md:w-11/12 mx-auto py-10 md:py-20  max-w-screen-2xl">
       <HelmetProvider>
         <Helmet>
           <title>Login - ArtifactArcade</title>

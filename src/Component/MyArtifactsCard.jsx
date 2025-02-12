@@ -37,7 +37,7 @@ export const MyArtifactsCard = ({ item, setMyArtifacts }) => {
     });
   };
   return (
-    <div className="shadow-lg rounded-lg p-4 flex flex-col md:flex-row gap-6 md:gap-0 justify-between items-center">
+    <div className="shadow-lg rounded-lg p-4 flex flex-col md:flex-row gap-6 md:gap-0 justify-between items-center ">
       <div className="flex items-center  space-x-4">
         <div className="flex-shrink-0">
           <img
@@ -46,7 +46,7 @@ export const MyArtifactsCard = ({ item, setMyArtifacts }) => {
           />
         </div>
         <div className="flex flex-col">
-          <h3 className="text-xl font-semibold text-gray-800 mb-1">
+          <h3 className="text-xl font-semibold text-gray-800 mb-1 dark:text-white">
             {artifactName}
           </h3>
           <p className="text-sm text-gray-500 mb-3">
