@@ -85,11 +85,21 @@ export const Navbar = () => {
               className="flex items-center ml-0 md:ml-8 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse translate-x-20 md:translate-x-0 relative mr-0 md:mr-14 lg:mr-0"
             >
               {/* User Menu Button */}
-              <label className="inline-flex items-center cursor-pointer space-x-2 mr-4">
+              <label
+                className={`inline-flex items-center cursor-pointer space-x-2 mr-4 ${
+                  theme === "dark" ? "rtl" : ""
+                }`}
+              >
                 <span className="text-gray-600 dark:text-gray-400 transition-colors">
                   <LuSunMedium />
                 </span>
-                <input type="checkbox" value="" className="sr-only peer" />
+                <input
+                  type="checkbox"
+                  value=""
+                  className="sr-only peer"
+                  onChange={toggleTheme}
+                  checked={theme === "dark"}
+                />
                 <div
                   className="relative w-12 h-7 bg-gray-300 rounded-full peer dark:bg-gray-700 
             peer-checked:bg-[#97643F] transition-colors duration-300
@@ -153,24 +163,30 @@ export const Navbar = () => {
               )}
             </div>
           ) : (
-            <div className="flex justify-between items-center translate-x-10 md:translate-x-0 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse md:gap-3 lg:gap-6">
+            <div className="flex justify-between  items-center translate-x-10 md:translate-x-0 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse md:gap-3 lg:gap-6">
               {/* Dark Mode Toggle */}
-              <label className="hidden md:inline-flex items-center cursor-pointer space-x-2">
+              <label
+                className={`inline-flex items-center cursor-pointer space-x-2 mr-4 ${
+                  theme === "dark" ? "rtl" : ""
+                }`}
+              >
                 <span className="text-gray-600 dark:text-gray-400 transition-colors">
                   <LuSunMedium />
                 </span>
                 <input
                   type="checkbox"
-                  onChange={toggleTheme}
+                  value=""
                   className="sr-only peer"
+                  onChange={toggleTheme} // Use the toggleTheme function from context
+                  checked={theme === "dark"} // Controlled by the theme state from context
                 />
                 <div
                   className="relative w-12 h-7 bg-gray-300 rounded-full peer dark:bg-gray-700 
-          peer-checked:bg-[#97643F] transition-colors duration-300 
-          peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-5 
-          peer-checked:after:border-white after:content-[''] after:absolute after:top-1 
-          after:left-1 after:bg-white after:border-gray-300 after:border 
-          after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-500"
+            peer-checked:bg-[#97643F] transition-colors duration-300
+            peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-5 
+            peer-checked:after:border-white after:content-[''] after:absolute after:top-1 
+            after:left-1 after:bg-white after:border-gray-300 after:border 
+            after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-500"
                 ></div>
                 <span className="text-gray-900 dark:text-gray-100 transition-colors">
                   <LuSunMoon />
@@ -226,22 +242,28 @@ export const Navbar = () => {
               } lg:translate-x-24 gap-2 md:gap-0 flex-col  font-bold p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-dark-bg `}
             >
               {li}
-              <label className="inline-flex items-center cursor-pointer space-x-2 md:hidden">
+              <label
+                className={`inline-flex items-center cursor-pointer space-x-2 mr-4 lg:hidden ${
+                  theme === "dark" ? "rtl" : ""
+                }`}
+              >
                 <span className="text-gray-600 dark:text-gray-400 transition-colors">
                   <LuSunMedium />
                 </span>
                 <input
                   type="checkbox"
-                  onChange={toggleTheme}
+                  value=""
                   className="sr-only peer"
+                  onChange={toggleTheme}
+                  checked={theme === "dark"}
                 />
                 <div
                   className="relative w-12 h-7 bg-gray-300 rounded-full peer dark:bg-gray-700 
-          peer-checked:bg-[#97643F] transition-colors duration-300
-          peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-5 
-          peer-checked:after:border-white after:content-[''] after:absolute after:top-1 
-          after:left-1 after:bg-white after:border-gray-300 after:border 
-          after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-500"
+            peer-checked:bg-[#97643F] transition-colors duration-300
+            peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-5 
+            peer-checked:after:border-white after:content-[''] after:absolute after:top-1 
+            after:left-1 after:bg-white after:border-gray-300 after:border 
+            after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-500"
                 ></div>
                 <span className="text-gray-900 dark:text-gray-100 transition-colors">
                   <LuSunMoon />
