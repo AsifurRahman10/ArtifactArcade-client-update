@@ -9,7 +9,7 @@ export const PrivateRouter = ({ children }) => {
   const location = useLocation();
   if (loading) {
     return (
-      <div className="mix-h-screen w-full">
+      <div className="min-h-screen w-full mt-[112px]">
         <Lottie
           className="w-1/3 mx-auto"
           animationData={loadingImg}

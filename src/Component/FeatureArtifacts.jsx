@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FeatureCard } from "./FeatureCard";
 import { Link } from "react-router-dom";
 

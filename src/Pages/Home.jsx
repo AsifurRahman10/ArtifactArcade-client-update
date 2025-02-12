@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Banner } from "../Component/Banner/Banner";
 import { FeatureArtifacts } from "../Component/FeatureArtifacts";
 import { AboutUs } from "./AboutUs";

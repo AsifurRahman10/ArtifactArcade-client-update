@@ -29,10 +29,12 @@ export const AboutUs = () => {
             stories etched in artifacts, revealing the marvels of ancient
             civilizations. Let your curiosity unlock the door to the past.
           </p>
-          <Link to={"/allArtifacts"}>
-            <button className="mt-4 px-8 py-3 text-white font-semibold bg-gradient-to-r from-[#6B4E35] to-[#4A3423] rounded-lg shadow-lg hover:shadow-2xl hover:scale-110 hover:bg-[#4A3423] transition-all duration-300">
-              Learn More
-            </button>
+          <Link
+            to="/allArtifacts"
+            className="bg-custom-btn font-semibold text-white py-3 rounded group overflow-hidden px-8 md:px-6 lg:px-10 relative flex justify-center items-center w-1/3"
+          >
+            <span className="relative z-10">Learn More</span>
+            <span className="absolute inset-0 w-0 bg-[#183153] transition-all rounded duration-500 ease-in-out group-hover:w-full"></span>
           </Link>
         </div>
       </div>
