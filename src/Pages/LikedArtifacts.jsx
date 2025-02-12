@@ -42,7 +42,7 @@ export const LikedArtifacts = () => {
         }
       ></Title>
 
-      <div className="w-11/12 lg:w-9/12 mx-auto mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:py-10">
+      <div className="w-11/12 lg:w-9/12 mx-auto  grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:py-10">
         {likedData.map((item, index) => (
           <div
             key={index}

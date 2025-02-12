@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "flowbite";
 import logo from "../../public/logo.png";
 import { Link, NavLink } from "react-router-dom";
@@ -11,6 +11,8 @@ export const Navbar = () => {
 
   const { toggleTheme } = useContext(ThemeContext);
 
+  const dropdownRef = useRef(null);
+  const navbarRef = useRef(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const handleDropDown = () => {
@@ -19,6 +21,24 @@ export const Navbar = () => {
   const handleNavbarOpen = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsDropdownOpen(false);
+      }
+      if (navbarRef.current && !navbarRef.current.contains(e.target)) {
+        setIsNavbarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   const li = (
     <>
       <NavLink
@@ -54,14 +74,34 @@ export const Navbar = () => {
       <div className=" border-gray-200 relative small-text w-11/12 lg:w-9/12 mx-auto">
         <div className="flex flex-wrap items-center justify-between p-4">
           {/* Logo */}
-          <Link to={"/"}>
+          <Link to={"/"} className="">
             <img src={logo} className="h-20 w-20" alt="Logo" />
           </Link>
 
           {/* User Profile Section */}
           {user ? (
-            <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse translate-x-20 md:translate-x-0 relative mr-0 md:mr-14 lg:mr-0">
+            <div
+              ref={dropdownRef}
+              className="flex items-center ml-0 md:ml-8 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse translate-x-20 md:translate-x-0 relative mr-0 md:mr-14 lg:mr-0"
+            >
               {/* User Menu Button */}
+              <label className="inline-flex items-center cursor-pointer space-x-2 mr-4">
+                <span className="text-gray-600 dark:text-gray-400 transition-colors">
+                  <LuSunMedium />
+                </span>
+                <input type="checkbox" value="" className="sr-only peer" />
+                <div
+                  className="relative w-12 h-7 bg-gray-300 rounded-full peer dark:bg-gray-700 
+            peer-checked:bg-[#97643F] transition-colors duration-300
+            peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-5 
+            peer-checked:after:border-white after:content-[''] after:absolute after:top-1 
+            after:left-1 after:bg-white after:border-gray-300 after:border 
+            after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-500"
+                ></div>
+                <span className="text-gray-900 dark:text-gray-100 transition-colors">
+                  <LuSunMoon />
+                </span>
+              </label>
               <button
                 type="button"
                 onClick={handleDropDown}
@@ -77,7 +117,7 @@ export const Navbar = () => {
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="z-50 absolute w-[200px] -right-16 md:-right-16 top-20 md:top-20 lg:-right-16 lg:top-20 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+                <div className="z-50 absolute w-[200px] -right-3 md:-right-16 top-20 md:top-20 lg:-right-16 lg:top-20 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
                   <div className="px-4 py-3">
                     <span className="block text-sm text-gray-900 dark:text-white">
                       {user?.displayName}
@@ -113,7 +153,7 @@ export const Navbar = () => {
               )}
             </div>
           ) : (
-            <div className="flex items-center translate-x-10 md:translate-x-0 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse md:gap-3 lg:gap-6">
+            <div className="flex justify-between items-center translate-x-10 md:translate-x-0 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse md:gap-3 lg:gap-6">
               {/* Dark Mode Toggle */}
               <label className="hidden md:inline-flex items-center cursor-pointer space-x-2">
                 <span className="text-gray-600 dark:text-gray-400 transition-colors">
@@ -177,25 +217,30 @@ export const Navbar = () => {
           <div
             className={`${
               isNavbarOpen ? "block" : "hidden"
-            } items-center justify-between w-full md:flex md:w-auto md:order-1`}
+            } items-center justify-between w-full lg:flex lg:w-auto lg:order-1`}
             id="navbar-user"
+            ref={navbarRef}
           >
-            <ul className="flex gap-2 md:gap-0 flex-col font-bold p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-dark-bg md:dark:bg-dark-bg dark:bg-dark-bg">
+            <ul
+              className={`flex translate-x-6 ${
+                user ? "lg:translate-x-10" : "lg:translate-x-24"
+              } lg:translate-x-24 gap-2 md:gap-0 flex-col  font-bold p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-dark-bg `}
+            >
               {li}
-              <label class="inline-flex items-center cursor-pointer space-x-2 md:hidden">
-                <span class="text-gray-600 dark:text-gray-400 transition-colors">
+              <label className="inline-flex items-center cursor-pointer space-x-2 md:hidden">
+                <span className="text-gray-600 dark:text-gray-400 transition-colors">
                   <LuSunMedium />
                 </span>
-                <input type="checkbox" value="" class="sr-only peer" />
+                <input type="checkbox" value="" className="sr-only peer" />
                 <div
-                  class="relative w-12 h-7 bg-gray-300 rounded-full peer dark:bg-gray-700 
+                  className="relative w-12 h-7 bg-gray-300 rounded-full peer dark:bg-gray-700 
           peer-checked:bg-[#97643F] transition-colors duration-300
           peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-5 
           peer-checked:after:border-white after:content-[''] after:absolute after:top-1 
           after:left-1 after:bg-white after:border-gray-300 after:border 
           after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-500"
                 ></div>
-                <span class="text-gray-900 dark:text-gray-100 transition-colors">
+                <span className="text-gray-900 dark:text-gray-100 transition-colors">
                   <LuSunMoon />
                 </span>
               </label>

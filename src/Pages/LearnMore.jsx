@@ -13,18 +13,18 @@ export default function LearnMore() {
       ></Title>
 
       <div className="w-11/12 lg:w-9/12 mx-auto my-10">
-        <h2 className="text-2xl font-medium text-gray-900">
+        <h2 className="text-2xl font-medium text-gray-900 dark:text-gray-200">
           What Are Artifacts?
         </h2>
-        <p className="text-gray-800 leading-relaxed mb-6">
+        <p className="text-gray-800 dark:text-gray-300 leading-relaxed mb-6">
           Artifacts are objects made or used by humans in the past, offering
           insights into ancient cultures, traditions, and daily life. These
           include tools, pottery, manuscripts, sculptures, and even clothing.
         </p>
-        <h2 className="text-2xl font-medium text-gray-900 mt-4">
+        <h2 className="text-2xl font-medium text-gray-900 dark:text-gray-200 mt-4">
           Why Are Artifacts Important?
         </h2>
-        <p className="text-gray-800 leading-relaxed mb-6">
+        <p className="text-gray-800 dark:text-gray-300 leading-relaxed mb-6">
           Artifacts are more than just ancient objects—they are windows into the
           past that help us understand human history, culture, and technological
           advancements.
@@ -55,7 +55,7 @@ export default function LearnMore() {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-medium text-gray-900 mt-4">
+        <h2 className="text-2xl font-medium text-gray-900 dark:text-gray-200 mt-4">
           How ArtifactArcade Can Help You
         </h2>
 
@@ -63,21 +63,23 @@ export default function LearnMore() {
         <div className="flex flex-col lg:flex-row gap-10 mt-4">
           {/* Left Side - Text Content */}
           <div className="flex-1">
-            <h4 className="text-2xl font-semibold text-gray-900 mb-4">
+            <h4 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 mb-4">
               As a Learner
             </h4>
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
               Learn from a Global Community of Historians and Enthusiasts
             </p>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
               ArtifactArcade connects you with a large community of passionate
               individuals who regularly share posts, discoveries, and insights.
               Whether you’re just beginning or deepening your knowledge, there's
               always something to explore.
             </p>
-            <p className="font-semibold text-gray-700">Key Features:</p>
+            <p className="font-semibold text-gray-700 dark:text-gray-300">
+              Key Features:
+            </p>
             <ul className="list-inside space-y-2 mt-4">
-              <li className="flex items-start text-gray-600">
+              <li className="flex items-start text-gray-600 dark:text-gray-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -97,7 +99,7 @@ export default function LearnMore() {
                 Collaborative Community: Participate in discussions and exchange
                 ideas.
               </li>
-              <li className="flex items-start text-gray-600">
+              <li className="flex items-start text-gray-600 dark:text-gray-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -117,7 +119,7 @@ export default function LearnMore() {
                 Continuous Learning: Stay updated with the latest research and
                 posts.
               </li>
-              <li className="flex items-start text-gray-600">
+              <li className="flex items-start text-gray-600 dark:text-gray-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -153,22 +155,24 @@ export default function LearnMore() {
         <div className="flex flex-col lg:flex-row gap-10 mt-4">
           {/* Left Side - Text Content for Contributor */}
           <div className="flex-1">
-            <h4 className="text-2xl font-semibold text-gray-900 mb-4">
+            <h4 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 mb-4">
               As a Contributor (Post Writer)
             </h4>
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
               Share Your Knowledge and Shape the Artifact Community
             </p>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
               As a contributor, you play a crucial role in the ArtifactArcade
               community by sharing your discoveries, insights, and research
               about historical artifacts. Your posts help deepen everyone's
               understanding of the past and contribute to the collective
               knowledge of enthusiasts worldwide.
             </p>
-            <p className="font-semibold text-gray-700">Key Benefits:</p>
+            <p className="font-semibold text-gray-700 dark:text-gray-300">
+              Key Benefits:
+            </p>
             <ul className="list-inside space-y-2 mt-4">
-              <li className="flex items-start text-gray-600">
+              <li className="flex items-start text-gray-600 dark:text-gray-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -188,7 +192,7 @@ export default function LearnMore() {
                 Share Your Expertise: Write about the fascinating history of
                 artifacts and discoveries.
               </li>
-              <li className="flex items-start text-gray-600">
+              <li className="flex items-start text-gray-600 dark:text-gray-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -208,7 +212,7 @@ export default function LearnMore() {
                 Build Your Reputation: Gain recognition within the community for
                 your valuable contributions.
               </li>
-              <li className="flex items-start text-gray-600">
+              <li className="flex items-start text-gray-600 dark:text-gray-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

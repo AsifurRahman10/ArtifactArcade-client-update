@@ -16,8 +16,8 @@ export const Card = ({ item }) => {
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {artifactName}
           </h5>
-          <h4 className="font-semibold text-gray-600 mb-2 text-sm">
-            <span className="text-gray-700">Discover By </span>: {discoveredBy}
+          <h4 className="font-semibold text-gray-400 mb-2 text-sm">
+            <span className="text-gray-500">Discover By </span>: {discoveredBy}
           </h4>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {historicalContext.split(" ").slice(0, 20).join(" ") + "..."}

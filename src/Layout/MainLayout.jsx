@@ -13,7 +13,7 @@ export const MainLayout = () => {
     return (
       <div className="min-h-screen w-full mt-[112px]">
         <Lottie
-          className="w-1/3 mx-auto"
+          className="w-1/5 mx-auto my-auto"
           animationData={loadingImg}
           loop={true}
         />

@@ -1,13 +1,16 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FeatureCard } from "./FeatureCard";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazyload";
 
 export const FeatureArtifacts = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios.get("http://localhost:4000/highestLike").then((res) => {
       setData(res.data);
+      setLoading(false);
     });
   }, []);
   return (
@@ -22,7 +25,9 @@ export const FeatureArtifacts = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mt-10 md:mt-20">
         {data.map((item) => (
-          <FeatureCard key={item._id} item={item}></FeatureCard>
+          <LazyLoad height={400} offset={100} key={item._id}>
+            <FeatureCard item={item}></FeatureCard>
+          </LazyLoad>
         ))}
       </div>
       <Link

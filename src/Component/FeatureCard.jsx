@@ -14,7 +14,7 @@ export const FeatureCard = ({ item }) => {
           {artifactName}
         </h3>
         <p className="transition-opacity duration-500 ease-in-out">
-          {historicalContext}
+          {historicalContext.split(" ").slice(0, 20).join(" ") + "..."}
         </p>
         <p className="flex items-center gap-2 mt-2 transition-opacity duration-500 ease-in-out">
           <AiOutlineLike className="text-blue-500 text-2xl" />

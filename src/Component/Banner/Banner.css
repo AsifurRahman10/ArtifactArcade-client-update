@@ -36,7 +36,7 @@
   .custom-prev-arrow,
   .custom-next-arrow {
     top: auto;
-    bottom: 6px;
+    bottom: 40px;
   }
 
   .custom-prev-arrow {
@@ -52,7 +52,7 @@
   .custom-prev-arrow,
   .custom-next-arrow {
     top: auto;
-    bottom: 0px; /* Move to bottom */
+    bottom: 40px; /* Move to bottom */
   }
 
   .custom-prev-arrow {
