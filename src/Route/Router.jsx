@@ -11,6 +11,7 @@ import { LikedArtifacts } from "../Pages/LikedArtifacts";
 import { MyArtifacts } from "../Pages/MyArtifacts";
 import { UpdateArtifacts } from "../Pages/UpdateArtifacts";
 import { Error } from "../Pages/Error";
+import LearnMore from "../Pages/LearnMore";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
             <AddArtifacts></AddArtifacts>
           </PrivateRouter>
         ),
+      },
+      {
+        path: "/learn-more",
+        element: <LearnMore />,
       },
       {
         path: "/likedArtifacts",

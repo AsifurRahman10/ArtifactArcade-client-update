@@ -1,6 +1,12 @@
 export const Title = ({ title, para }) => {
   return (
-    <div className="relative min-h-[300px] bg-title-bg w-full bg-cover bg-no-repeat flex flex-col justify-center items-center">
+    <div
+      className="relative min-h-[300px] w-full bg-title-bg bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center"
+      style={{
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+      }}
+    >
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black opacity-50 pointer-events-none"></div>
 

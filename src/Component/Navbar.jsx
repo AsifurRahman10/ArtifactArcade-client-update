@@ -9,7 +9,7 @@ import { ThemeContext } from "../Provider/ThemeProvider";
 export const Navbar = () => {
   const { user, handleSignOut } = useContext(AuthContext);
 
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useContext(ThemeContext);
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -33,11 +33,19 @@ export const Navbar = () => {
       >
         <li>All Artifacts</li>
       </NavLink>
+      {user && (
+        <NavLink
+          to="/add_artifacts"
+          className={({ isActive }) => (isActive ? "text-custom-btn" : "")}
+        >
+          <li>Add Artifacts</li>
+        </NavLink>
+      )}
       <NavLink
-        to="/add_artifacts"
+        to="/learn-more"
         className={({ isActive }) => (isActive ? "text-custom-btn" : "")}
       >
-        <li>Add Artifacts</li>
+        <li>Learn More</li>
       </NavLink>
     </>
   );
